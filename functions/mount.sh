@@ -61,7 +61,7 @@ do
                     echo "Error: Failed to mount ${app}"
                     exit 1
                 else
-                    echo -e "\nMounted\n$data_name"
+                    echo -e "\nMounted $data_name to\n/mnt/truetool/$data_name"
                 fi
                 echo -e "\nUnmount with:\nzfs set mountpoint=legacy ${full_path} && rmdir /mnt/truetool/$data_name\n\nOr use the Unmount All option\n"
 
@@ -76,7 +76,7 @@ do
                         title
                         break
                         ;;
-                    [Nn] | [Nn][Oo])
+                    [Nn] | [Nn][Oo] | "")
                         exit
                         ;;
                     *)
